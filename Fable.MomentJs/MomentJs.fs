@@ -1,9 +1,8 @@
-namespace Fable.Import
+namespace Fable.MomentJs
 open System
-open System.Text.RegularExpressions
 open Fable.Core
-open Fable.Import.JS
 
+[<AutoOpen>]
 module Moment =
     type MomentComparable = obj
 
@@ -363,4 +362,5 @@ module Moment =
         abstract now: unit -> float
 
     let [<Import("*","moment")>] Global: MomentStatic = failwith "JS only"
-
+    
+    let moment = Global
