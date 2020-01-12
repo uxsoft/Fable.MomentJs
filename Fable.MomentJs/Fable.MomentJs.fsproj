@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>uxsoft, 2sComplement</Authors>
+    <Description>Fable bindings for MomentJs</Description>
+    <PackageProjectUrl>https://github.com/uxsoft/Fable.MomentJs</PackageProjectUrl>
+    <PackageIconUrl>https://cdn.worldvectorlogo.com/logos/momentjs.svg</PackageIconUrl>
+    <RepositoryUrl>https://github.com/uxsoft/Fable.MomentJs</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Fable.Import.Moment.fs" />
+    <Compile Include="Fable.Helpers.Moment.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="*.fsproj; **\*.fs" PackagePath="fable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" Version="3.1.4"/>
+  </ItemGroup>
+</Project>
