@@ -6,12 +6,18 @@
     <Authors>uxsoft, 2sComplement</Authors>
     <Description>Fable bindings for MomentJs</Description>
     <PackageProjectUrl>https://github.com/uxsoft/Fable.MomentJs</PackageProjectUrl>
-    <PackageIconUrl>https://cdn.worldvectorlogo.com/logos/momentjs.svg</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/uxsoft/Fable.MomentJs</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="MomentJs.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="*.fsproj; **\*.fs" PackagePath="fable\" />

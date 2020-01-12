@@ -3,7 +3,7 @@ open System
 open Fable.Core
 
 [<AutoOpen>]
-module Moment =
+module MomentJs =
     type MomentComparable = obj
 
     and [<AllowNullLiteral>] MomentDateObject =
