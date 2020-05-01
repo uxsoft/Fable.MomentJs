@@ -1,4 +1,5 @@
 .ionide/
 .idea/
+.vs/
 bin/
 obj/
