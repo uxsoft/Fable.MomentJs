@@ -26,10 +26,10 @@ jobs:
       with:
         version: ${{ steps.nbgv.outputs.Version }}
       
-    - name: Install dependencies
+    - name: Install Dependencies
       run: dotnet restore
 
-    - name: Publish NuGet
+    - name: Publish to NuGet
       uses: rohith/publish-nuget@v2.4.0
       with:
         PROJECT_FILE_PATH: ./Fable.MomentJs/Fable.MomentJs.fsproj
