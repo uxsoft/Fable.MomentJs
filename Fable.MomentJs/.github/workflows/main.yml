@@ -21,7 +21,7 @@ jobs:
       id: nbgv
       uses: AArnott/nbgv@v0.3
     
-    - name: Update Project File with the Version
+    - name: Update Project with the Version
       uses: roryprimrose/set-vs-sdk-project-version@v1.0.3
       with:
         version: ${{ steps.nbgv.outputs.Version }}
