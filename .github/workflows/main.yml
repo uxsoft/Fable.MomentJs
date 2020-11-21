@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
       with:
@@ -15,25 +15,21 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.201
-          
-    - name: Calculate Version
-      id: nbgv
-      uses: AArnott/nbgv@v0.3
+        dotnet-version: 5.0.100
     
     - name: Update Project with the Version
-      uses: roryprimrose/set-vs-sdk-project-version@v1.0.3
+      uses: roryprimrose/set-vs-sdk-project-version@v1
       with:
-        version: ${{ steps.nbgv.outputs.Version }}
+        version: 1.${{ github.run_number }}.0
       
     - name: Install Dependencies
       run: dotnet restore
 
     - name: Publish to NuGet
-      uses: rohith/publish-nuget@v2.4.0
+      uses: rohith/publish-nuget@v2
       with:
         PROJECT_FILE_PATH: ./Fable.MomentJs/Fable.MomentJs.fsproj
-        VERSION_STATIC: ${{ steps.nbgv.outputs.Version }}
+        VERSION_STATIC: 1.${{ github.run_number }}.0
         TAG_COMMIT: true
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
         INCLUDE_SYMBOLS: false
